@@ -36,7 +36,7 @@
     </div>
 </div> -->
 
-<div class="container">
+<!-- <div class="container">
     <app-cockpit
     (serverCreated)="onServerAdded($event)"
     (blueprintCreated)="onBlueprintAdded($event)"
@@ -49,6 +49,17 @@
             <app-server-element 
             *ngFor="let serverElement of serverElements"
             [element]="serverElement"></app-server-element>
+        </div>
+    </div>
+</div> -->
+
+<div class="container">
+    <div class="col-xs-12">
+        <div class="h1">The Game</div>
+        <app-game-control (increment)="onIncrement($event)"></app-game-control>
+        <div *ngFor="let value of values">
+            <app-odd *ngIf="value%2==1" [oddValue]="value"></app-odd>
+            <app-even *ngIf="value%2==0" [evenValue]="value"></app-even>
         </div>
     </div>
 </div>
